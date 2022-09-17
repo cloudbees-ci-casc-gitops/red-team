@@ -19,43 +19,6 @@ jenkins:
         value: "${CASC_BUNDLE_ID}"
   quietPeriod: 0
   systemMessage: 'Jenkins configured using CloudBees CI CasC v1'
-globalCloudBeesPipelineTemplateCatalog:
-  catalogs:
-  - branchOrTag: "main"
-    scm:
-      github:
-        configuredByUrl: true
-        credentialsId: "cbci-casc-gitops-github-app"
-        id: "${GITHUB_REPO}-template-catalog"
-        repoOwner: "${GITHUB_ORGANIZATION}"
-        repository: "pipeline-template-catalog"
-        repositoryUrl: "https://github.com/${GITHUB_ORGANIZATION}/pipeline-template-catalog.git"
-        traits:
-        - gitHubBranchDiscovery:
-            strategyId: 1
-        - gitHubPullRequestDiscovery:
-            strategyId: 1
-        - gitHubForkDiscovery:
-            strategyId: 1
-            trust: "gitHubTrustPermissions"
-    updateInterval: "1d"
 unclassified:
-  gitHubPluginConfig:
-    configs:
-    - credentialsId: "beedemo-dev-github-pat"
-      name: "GitHub.com"
-    hookSecretConfigs:
-    - credentialsId: "github-webhook-secret"
-  globallibraries:
-    libraries:
-    - defaultVersion: "main"
-      name: "pipeline-library"
-      retriever:
-        modernSCM:
-          scm:
-            github:
-              credentialsId: "cbci-casc-gitops-github-app"
-              repoOwner: "${GITHUB_ORGANIZATION}"
-              repository: "pipeline-library"
   headerLabel:
     text: "${GITHUB_REPO} - 1"
