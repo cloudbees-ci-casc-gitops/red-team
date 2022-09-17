@@ -40,6 +40,12 @@ globalCloudBeesPipelineTemplateCatalog:
             trust: "gitHubTrustPermissions"
     updateInterval: "1d"
 unclassified:
+  gitHubPluginConfig:
+    configs:
+    - credentialsId: "beedemo-dev-github-pat"
+      name: "GitHub.com"
+    hookSecretConfigs:
+    - credentialsId: "github-webhook-secret"
   globallibraries:
     libraries:
     - defaultVersion: "main"
