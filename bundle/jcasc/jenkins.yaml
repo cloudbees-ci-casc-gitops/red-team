@@ -21,4 +21,4 @@ jenkins:
   systemMessage: 'Jenkins configured using CloudBees CI CasC v1'
 unclassified:
   headerLabel:
-    text: "${GITHUB_REPO} - 1"
+    text: "${GITHUB_REPO} - v1"
